@@ -1,0 +1,55 @@
+:root {
+  --color1: #8e2de2;
+  --color2: #4a00e0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: transparent;
+  overflow: hidden;
+}
+
+#bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, var(--color1), var(--color2));
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: animateBG 10s ease infinite;
+}
+
+@keyframes animateBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card.glassmorph {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .card.glassmorph {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#display, #svgText {
+  transition: all 0.3s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+.animate-fadein {
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
